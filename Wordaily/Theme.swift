@@ -9,7 +9,7 @@ import SwiftUI
 
 extension Color {
     static let appBackground = Color(red: 0.29, green: 0.41, blue: 0.34)
-    static let appCremeIcons = Color(red: 0.96, green: 0.91, blue: 0.81)
+    static let appCremeIconsNTitle = Color(red: 0.96, green: 0.91, blue: 0.81)
     static let appLimeTitle = Color(red: 0.72, green: 0.76, blue: 0.63)
     static let appBeigeBox = Color(red: 0.84, green: 0.78, blue: 0.68)
     static let appDarkGreen = Color(red: 0.37, green: 0.34, blue: 0.27)
@@ -20,10 +20,9 @@ struct OutlinedCircleIcon: ViewModifier{
     var size: CGFloat = 56
     func body(content: Content) -> some View{
         content
-            .foregroundColor(.appCremeIcons)
             .frame(width: size, height: size)
             .overlay(
-                Circle().stroke(Color.appCremeIcons, lineWidth: 1.5)
+                Circle().stroke(Color.appCremeIconsNTitle, lineWidth: 1.5)
             )
         
     }
@@ -35,14 +34,57 @@ extension View {
     }
 }
 
+struct IconNavigation<Destination: View>: View{
+    var icon: String
+    var size: CGFloat? = nil
+    @ViewBuilder var destinationPage: () -> Destination
+    
+    var body: some View{
+        NavigationLink{
+            destinationPage()
+        }label: {
+            let VerSize = size ?? 25
+            Image(systemName: "\(icon)").font(.system(size: VerSize))
+                .foregroundColor(.appCremeIconsNTitle)
+        }
+    }
+}
+
 struct IconButton: View{
     var icon: String
+    var which: String
+    @Binding var changeShowMenu: Bool
+    @Binding var degree: Bool
     
     var body: some View{
         Button{
-            Text("oi")
-        }label: {
-            Image(systemName: "\(icon)").font(.system(size: 25))
+            switch which{
+            case "ClickMenu":
+                degree.toggle()
+                changeShowMenu.toggle()
+            default:
+                break
+            }
+        } label:{
+            Image(systemName: "\(icon)").font(.system(size:25))
         }
+    }
+}
+
+struct Rotate: ViewModifier{
+    func body(content: Content) -> some View {
+        content
+            .rotationEffect(.degrees(90), anchor: .leading)
+    }
+}
+extension View{
+    func rotateIcon() -> some View{
+        modifier(Rotate())
+    }
+}
+
+struct Theme: PreviewProvider {
+    static var previews: some View {
+        WordsView()
     }
 }

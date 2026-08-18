@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C7C2F4C3033DFCF00C0B5A4 /* WordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C2F4B3033DFCF00C0B5A4 /* WordsView.swift */; };
 		2CFFE328303234E500E693F1 /* WordailyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFFE327303234E500E693F1 /* WordailyApp.swift */; };
 		2CFFE32A303234E500E693F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFFE329303234E500E693F1 /* ContentView.swift */; };
 		2CFFE32C303234E800E693F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CFFE32B303234E800E693F1 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C7C2F4B3033DFCF00C0B5A4 /* WordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsView.swift; sourceTree = "<group>"; };
 		2CFFE324303234E500E693F1 /* Wordaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CFFE327303234E500E693F1 /* WordailyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordailyApp.swift; sourceTree = "<group>"; };
 		2CFFE329303234E500E693F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +36,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C2E8CB13033DB6200E0809D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CFFE329303234E500E693F1 /* ContentView.swift */,
+				2C7C2F4B3033DFCF00C0B5A4 /* WordsView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		2CFFE31B303234E500E693F1 = {
 			isa = PBXGroup;
 			children = (
@@ -53,8 +64,8 @@
 		2CFFE326303234E500E693F1 /* Wordaily */ = {
 			isa = PBXGroup;
 			children = (
+				2C2E8CB13033DB6200E0809D /* Views */,
 				2CFFE327303234E500E693F1 /* WordailyApp.swift */,
-				2CFFE329303234E500E693F1 /* ContentView.swift */,
 				2CFFE32B303234E800E693F1 /* Assets.xcassets */,
 				2CFFE32D303234E800E693F1 /* Preview Content */,
 				2CFFE349303269C700E693F1 /* Theme.swift */,
@@ -140,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C7C2F4C3033DFCF00C0B5A4 /* WordsView.swift in Sources */,
 				2CFFE34A303269C700E693F1 /* Theme.swift in Sources */,
 				2CFFE32A303234E500E693F1 /* ContentView.swift in Sources */,
 				2CFFE328303234E500E693F1 /* WordailyApp.swift in Sources */,
