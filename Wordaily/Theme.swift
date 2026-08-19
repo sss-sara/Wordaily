@@ -37,51 +37,26 @@ extension View {
 struct IconNavigation<Destination: View>: View{
     var icon: String
     var size: CGFloat? = nil
+    var which: String
     @ViewBuilder var destinationPage: () -> Destination
     
     var body: some View{
         NavigationLink{
             destinationPage()
+            switch which {
+            case "saveFolder":
+                Text("o que vou fazer slk n tenho ideia")
+            default:
+                Text("oi")
+            }
         }label: {
             let VerSize = size ?? 25
-            Image(systemName: "\(icon)").font(.system(size: VerSize))
+            Image(systemName: icon).font(.system(size: VerSize))
                 .foregroundColor(.appCremeIconsNTitle)
         }
     }
 }
 
-struct IconButton: View{
-    var icon: String
-    var which: String
-    @Binding var changeShowMenu: Bool
-    @Binding var degree: Bool
-    
-    var body: some View{
-        Button{
-            switch which{
-            case "ClickMenu":
-                degree.toggle()
-                changeShowMenu.toggle()
-            default:
-                break
-            }
-        } label:{
-            Image(systemName: "\(icon)").font(.system(size:25))
-        }
-    }
-}
-
-struct Rotate: ViewModifier{
-    func body(content: Content) -> some View {
-        content
-            .rotationEffect(.degrees(90), anchor: .leading)
-    }
-}
-extension View{
-    func rotateIcon() -> some View{
-        modifier(Rotate())
-    }
-}
 
 struct Theme: PreviewProvider {
     static var previews: some View {
