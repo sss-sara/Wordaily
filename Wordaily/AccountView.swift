@@ -13,7 +13,6 @@ struct AccountView: View {
         NavigationStack{
             Color.appBackground
                 .ignoresSafeArea()
-                .presentationDetents([.medium])
                 .overlay(
                     VStack{
                         Text("Vocabulário")
@@ -23,14 +22,14 @@ struct AccountView: View {
                             .font(.title)
                         HStack{
                             Spacer()
-                            RectangleBox(text: "Favoritos", icon: "star.fill", toWhich: "favorites")
-                            RectangleBox(text: "Pastas   ", icon: "folder.fill", toWhich: "teste")//{WordsView()}
+                            IconNavigation(icon: "star.fill", which: "favorites", name: "Favoritos", apparence: "accountrectangle"){FavoritesView()}
+                            IconNavigation(icon: "folder.fill", which: "folders", name: "Pastas   ", apparence: "accountrectangle"){WordsView()}
                             Spacer()
                         }
                         HStack{
                             Spacer()
-                            RectangleBox(text: "Criações", icon: "pencil.and.outline", toWhich: "teste")//{WordsView()}
-                            RectangleBox(text: "Histórico", icon: "clock", toWhich: "teste")//{WordsView()}
+                            IconNavigation(icon: "pencil.and.outline", which: "creations", name: "Criações", apparence: "accountrectangle"){WordsView()}
+                            IconNavigation(icon: "clock", which: "history", name: "Histórico", apparence: "accountrectangle"){WordsView()}
                             Spacer()
                         }
                         Text("Personalização")
@@ -60,6 +59,9 @@ struct AccountView: View {
                                 VStack{
                                     Image(systemName: "bell.badge").font(.system(size: 110))
                                         .foregroundColor(.appMoss)
+                                    Text("Notificações")
+                                        .foregroundColor(.appMoss)
+                                        .font(.title3)
                                 }
                             }
                             Spacer()
@@ -67,7 +69,6 @@ struct AccountView: View {
                         Spacer()
                         
                     }
-                    
                         .toolbar{
                             ToolbarItem(placement: .navigationBarLeading) {
                                 Button{

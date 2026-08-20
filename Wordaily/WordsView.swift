@@ -32,7 +32,7 @@ struct WordsView: View {
                             //}
                             VStack{
                                 HStack{
-                                    IconNavigation(icon: "gearshape", size: 30, which: "configuration"){
+                                    IconNavigation(icon: "gearshape", size: 30, which: "configuration", apparence: "invisible"){
                                         ContentView()
                                         
                                     }
@@ -44,7 +44,7 @@ struct WordsView: View {
                                     Spacer()
                                 }
                                 HStack{
-                                    IconNavigation(icon: "person.crop.circle", size: 30, which: "account"){
+                                    IconNavigation(icon: "person.crop.circle", size: 30, which: "account", apparence: "invisible"){
                                         AccountView()
                                         
                                     }
@@ -72,7 +72,7 @@ struct WordsView: View {
                         VStack {
                             HStack{
                                 Spacer()
-                                IconNavigation(icon: "square.grid.2x2", which: "categories"){ContentView()}
+                                IconNavigation(icon: "square.grid.2x2", which: "categories", apparence: "invisible"){ContentView()}
                                     .outlinedCircleIcon()
                                     .padding()
                             }
@@ -190,7 +190,7 @@ struct WordsView: View {
                                                 Spacer()
                                             }
                                         )
-                                        .presentationDetents([.medium, .large])
+                                        .presentationDetents([.medium, .large, .fraction(0.75)])
                                         .presentationDragIndicator(.hidden)
                                 }
                                 
@@ -202,6 +202,7 @@ struct WordsView: View {
                                         switch addFolder{
                                         case false:
                                             addFolder = true
+                                            //ir para a pagina de pasta
                                             
                                         case true:
                                             addFolder = false
