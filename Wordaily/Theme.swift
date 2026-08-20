@@ -129,7 +129,7 @@ struct SearchBar: View{
                         .foregroundColor(.appMoss)
                         .padding(.leading, -280)
                 }
-                
+                .padding()
             }
             //.padding(.bottom, 750)
             //Spacer()
@@ -138,6 +138,7 @@ struct SearchBar: View{
 }
 
 struct TermsRectangle: View{
+    var hasDescription: Bool
     var body: some View{
         ZStack{
             RoundedRectangle(cornerRadius: 20)
@@ -147,21 +148,51 @@ struct TermsRectangle: View{
                 Text("Termo 1")
                     .foregroundColor(.appDarkMoss)
                     .padding(.trailing, 300)
-                HStack{
-                    Spacer()
-                    Text("(tipo) Descrição")
-                    Spacer()
-                    Spacer()
-                    Spacer()
-                    Image(systemName: "folder")
-                        .foregroundColor(.appCremeIconsNTitle)
-                    Image(systemName: "star.fill")
-                        .foregroundColor(.appCremeIconsNTitle)
-                    Spacer()
-                }
+                    HStack{
+                        Spacer()
+                        Text("(tipo) Descrição")
+                            .foregroundColor(.appInfoText)
+                        Spacer()
+                        Spacer()
+                        Spacer()
+                        Image(systemName: "folder")
+                            .foregroundColor(.appCremeIconsNTitle)
+                        Image(systemName: "star.fill")
+                            .foregroundColor(.appCremeIconsNTitle)
+                        Spacer()
+                    }
+                
                 Text("data")
-                    .foregroundColor(.appDarkGreen)
+                    .foregroundColor(.appInfoDescription)
                     .padding(.trailing, 320)
+            }
+        }
+    }
+}
+struct FolderRectangle: View{
+    var body: some View{
+        ZStack{
+            RoundedRectangle(cornerRadius: 30)
+                .frame(width: 400, height: 80)
+                .foregroundColor(.appBeigeBox)
+            HStack{
+                VStack{
+                    
+                    Text("Nome da pasta")
+                        .foregroundColor(.appDarkMoss)
+                        .padding(.top)
+                    
+                    Text("quantidade de termos")
+                        .foregroundColor(.appInfoText)
+                        .padding()
+                }
+                .padding(.trailing, 150)
+            }
+            HStack{
+                Spacer()
+                Image(systemName: "chevron.right").font(.system(size: 45))
+                    .foregroundColor(.appMoss)
+                    .padding(.trailing)
             }
         }
     }

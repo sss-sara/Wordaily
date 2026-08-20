@@ -10,6 +10,7 @@
 		2C6725DC30368B7200860206 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6725DB30368B7200860206 /* AccountView.swift */; };
 		2C7C2F4C3033DFCF00C0B5A4 /* WordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C2F4B3033DFCF00C0B5A4 /* WordsView.swift */; };
 		2CC81D3D3037AC3C00839408 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC81D3C3037AC3C00839408 /* FavoritesView.swift */; };
+		2CC81D3F3037C46200839408 /* FoldersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC81D3E3037C46200839408 /* FoldersView.swift */; };
 		2CFFE328303234E500E693F1 /* WordailyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFFE327303234E500E693F1 /* WordailyApp.swift */; };
 		2CFFE32A303234E500E693F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFFE329303234E500E693F1 /* ContentView.swift */; };
 		2CFFE32C303234E800E693F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CFFE32B303234E800E693F1 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		2C6725DB30368B7200860206 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		2C7C2F4B3033DFCF00C0B5A4 /* WordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsView.swift; sourceTree = "<group>"; };
 		2CC81D3C3037AC3C00839408 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		2CC81D3E3037C46200839408 /* FoldersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersView.swift; sourceTree = "<group>"; };
 		2CFFE324303234E500E693F1 /* Wordaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CFFE327303234E500E693F1 /* WordailyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordailyApp.swift; sourceTree = "<group>"; };
 		2CFFE329303234E500E693F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 				2C7C2F4B3033DFCF00C0B5A4 /* WordsView.swift */,
 				2C6725DB30368B7200860206 /* AccountView.swift */,
 				2CC81D3C3037AC3C00839408 /* FavoritesView.swift */,
+				2CC81D3E3037C46200839408 /* FoldersView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			files = (
 				2C7C2F4C3033DFCF00C0B5A4 /* WordsView.swift in Sources */,
 				2CFFE34A303269C700E693F1 /* Theme.swift in Sources */,
+				2CC81D3F3037C46200839408 /* FoldersView.swift in Sources */,
 				2CC81D3D3037AC3C00839408 /* FavoritesView.swift in Sources */,
 				2C6725DC30368B7200860206 /* AccountView.swift in Sources */,
 				2CFFE32A303234E500E693F1 /* ContentView.swift in Sources */,

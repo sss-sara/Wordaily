@@ -19,11 +19,11 @@ struct FavoritesView: View {
                             .padding()
                         //video da menina de cabelo assimetrico mostra como
                         //adicionar conforme a quantidade de dados
-                        TermsRectangle()
-                        TermsRectangle()
+                        TermsRectangle(hasDescription: true)
+                        TermsRectangle(hasDescription: true)
                         Spacer()
                         
-                            .toolbar{
+                            /*.toolbar{
                                 ToolbarItem(placement: .navigationBarLeading) {
                                     Button{
                                         dismiss()
@@ -32,8 +32,18 @@ struct FavoritesView: View {
                                         
                                     }
                                 }
-                            }
+                            }*/
                     }
+                        .toolbar{
+                            ToolbarItem(placement: .navigationBarLeading) {
+                                Button{
+                                    dismiss()
+                                }label:{
+                                    CustomizedBackBar(pageName: "Favoritos")
+                                    
+                                }
+                            }
+                        }
                 )
         //}
         
