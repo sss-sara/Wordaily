@@ -8,20 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     var body: some View {
-        Color.appBackground
-            .ignoresSafeArea()
-            .presentationDetents([.medium])
-            .overlay(
-                Text("calma ai")
-                    
-            )
+        Text("bora mais uma pagina")
         
     }
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        WordsView()
     }
 }

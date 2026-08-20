@@ -45,7 +45,7 @@ struct WordsView: View {
                                 }
                                 HStack{
                                     IconNavigation(icon: "person.crop.circle", size: 30, which: "account"){
-                                        ContentView()
+                                        AccountView()
                                         
                                     }
                                     .offset(x: 7, y: 20)
@@ -82,12 +82,12 @@ struct WordsView: View {
                                 .font(.largeTitle)
                                 .padding(1)
                             ZStack{
-                                Rectangle()
+                                RoundedRectangle(cornerRadius: 25)
                                     .fill(Color.appBeigeBox)
                                     .frame(width: 200, height: 35)
-                                    .cornerRadius(25)
                                 HStack{
                                     Text("pronúncia")
+                                        .font(.subheadline)
                                         .foregroundColor(.appDarkGreen)
                                     Button{
                                         
@@ -98,6 +98,7 @@ struct WordsView: View {
                                 }
                             }
                             Text("(tipo) Descrição")
+                                .font(.headline)
                                 .foregroundColor(.appMoss)
                             Spacer()
                             HStack{
@@ -113,34 +114,86 @@ struct WordsView: View {
                                     Color.appBackground
                                         .ignoresSafeArea()
                                         .overlay(
-                                            VStack{
+                                            VStack(spacing: 0){
+                                                RoundedRectangle(cornerRadius: 30)
+                                                    .fill(Color.appCremeIconsNTitle)
+                                                    .padding(3)
+                                                    .frame(width: 100, height: 10)
                                                 Text("Palavra")
                                                     .font(.largeTitle)
                                                     .foregroundColor(.appMoss)
-                                                    .padding()
+                                                    .padding(.bottom, 0)
+                                                    .padding(.top, 5)
+                                                    
                                                 ZStack{
                                                     Rectangle()
                                                         .fill(Color.appBeigeBox)
                                                         .frame(width: 150, height: 25)
                                                         .cornerRadius(25)
-                                                        .padding()
-                                                    HStack{
+                                                        .padding(.top, 10)
+                                                    HStack(spacing: 0){
                                                         Text("pronúncia")
                                                             .foregroundColor(.appDarkGreen)
-                                                            .padding()
+                                                            .font(.caption)
+                                                            .padding(.top, 10)
                                                         Button{
                                                             
                                                         }label: {
                                                             Image(systemName: "speaker.wave.2.fill").font(.system(size: 25))
                                                                 .foregroundColor(.appDarkGreen)
+                                                                .padding(.top, 10)
                                                         }
                                                     }
-                                                    Spacer()
+                                                    //Spacer()
                                                 }
+                                                Text("(tipo) Descrição")
+                                                    .font(.body)
+                                                    .foregroundColor(.appMoss)
+                                                    .padding(.top, 10)
+                                                Spacer()
+                                                //se der erro de extra arguments, coloque o conteúdo de dentro da sheet em uma struct e apenas chame-a
+                                                Text("Exemplos")
+                                                    .font(.body)
+                                                    .bold()
+                                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                                    .foregroundColor(.appInfoText)
+                                                    .padding(10)
+                                                    .padding(.bottom, -15)
+                                                //fazer uma struct quando adicionar API
+                                                //aqui chamarei uma função para verificar quantos exemplos tem
+                                                //nessa função terá um laço de repetição com as características de fonte, cor etc
+                                                Text("1.")
+                                                    .font(.callout)
+                                                    .foregroundColor(.appInfoDescription)
+                                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                                    .padding(15)
+                                                Text("Sinônimos")
+                                                    .font(.body)
+                                                    .bold()
+                                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                                    .foregroundColor(.appInfoText)
+                                                    .padding(10)
+                                                    .padding(.bottom, -15)
+                                                
+                                                //1., 2. ...igual em exemplos
+                                                
+                                                //fazer uma struct quando adicionar API
+                                                //aqui chamarei uma função para verificar quantos exemplos tem
+                                                //nessa função terá um laço de repetição com as características de fonte, cor etc
+                                                Text("Origem")
+                                                    .font(.body)
+                                                    .bold()
+                                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                                    .foregroundColor(.appInfoText)
+                                                    .padding(10)
+                                                    .padding(.bottom, -15)
                                                 Spacer()
                                             }
-                                                .presentationDetents([.medium, .large])
-                                        )}
+                                        )
+                                        .presentationDetents([.medium, .large])
+                                        .presentationDragIndicator(.hidden)
+                                }
+                                
                             
                         
                                 Spacer()
